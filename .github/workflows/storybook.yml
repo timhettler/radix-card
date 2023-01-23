@@ -1,8 +1,10 @@
 name: Build and Deploy
 on:
   push:
-    paths: ["test/demo/**", "src/**"] # Trigger the action only when files change in the folders defined here
+    paths: ["test/demo/**", "src/**", ".storybook/**"] # Trigger the action only when files change in the folders defined here
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
