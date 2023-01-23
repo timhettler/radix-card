@@ -17,4 +17,15 @@ export default [
       ],
     },
   },
+  {
+    files: [
+      ".storybook/*.{js,jsx,mjs,cjs,ts,tsx}",
+      "**/*.stories.{js,jsx,mjs,cjs,ts,tsx}",
+    ],
+    extends: ["plugin:storybook/recommended"],
+    env: {
+      browser: true,
+      node: true,
+    },
+  },
 ];
