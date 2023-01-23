@@ -1,22 +1,19 @@
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), dts({ copyDtsFiles: false })],
   build: {
     lib: {
-      entry: "src/main.ts",
+      entry: resolve(__dirname, "src/main.ts"),
       name: "RadixCard",
       fileName: "radix-card",
     },
     rollupOptions: {
-      external: ["react"],
-      output: {
-        globals: {
-          react: "React",
-        },
-      },
+      external: ["react", "react-dom"],
     },
   },
 });
