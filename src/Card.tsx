@@ -72,7 +72,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
       setTargetHasFocus(event.target === targetRef.current ? "" : null);
     });
 
-    const handleBlur = composeEventHandlers(props.onBlur, (event) => {
+    const handleBlur = composeEventHandlers(props.onBlur, () => {
       setTargetHasFocus(null);
     });
 
@@ -166,6 +166,7 @@ interface CardExcludeProps extends PrimitiveDivProps {}
 
 const CardExclude = React.forwardRef<CardExcludeElement, CardExcludeProps>(
   (props: ScopedProps<CardExcludeProps>, forwardedRef) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { __scopeCard, ...targetProps } = props;
 
     return (

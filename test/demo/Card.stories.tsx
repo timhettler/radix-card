@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import classNames from "classnames/bind";
 
-import * as Card from "../../src/index.js";
+import * as Card from "../../src/main.js";
 
 import Creative from "./assets/Creative.png";
 import Chevron from "./assets/chevron.svg";
