@@ -9,7 +9,6 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
-      formats: ["es"],
       name: "RadixCard",
       fileName: "radix-card",
     },

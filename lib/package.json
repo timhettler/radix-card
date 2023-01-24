@@ -13,6 +13,7 @@
       "require": "./dist/radix-card.umd.cjs"
     }
   },
+  "types": "./dist/radix-card.d.ts",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
