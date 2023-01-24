@@ -1,5 +1,6 @@
 {
   "name": "radix-card",
+  "private": true,
   "workspaces": [
     "test",
     "lib"
