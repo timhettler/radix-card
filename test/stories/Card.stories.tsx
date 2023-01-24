@@ -1,15 +1,21 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import classNames from "classnames/bind";
 
-import * as Card from "../../src/main.js";
+import * as Card from "@timhettler/radix-card";
 
 import Creative from "./assets/Creative.png";
 import Chevron from "./assets/chevron.svg";
 
-import { STRINGS } from "./Card.string.js";
 import styles from "./Card.module.scss";
 
 const cx = classNames.bind(styles);
+
+const STRINGS = {
+  TITLE: "Graphic Design",
+  BODY: "Graphic design is a profession, academic discipline and applied art whose activity consists in projecting visual communications intended to transmit specific messages to social groups, with specific objectives.",
+  CTA: "Learn More",
+};
 
 const meta = {
   title: "Card",

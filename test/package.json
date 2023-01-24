@@ -1,0 +1,47 @@
+{
+  "name": "@timhettler/radix-card-test",
+  "packageManager": "yarn@3.3.1",
+  "type": "module",
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@storybook/addon-essentials": "^7.0.0-beta.32",
+    "@storybook/addon-interactions": "^7.0.0-beta.32",
+    "@storybook/addon-links": "^7.0.0-beta.32",
+    "@storybook/blocks": "^7.0.0-beta.32",
+    "@storybook/react": "^7.0.0-beta.32",
+    "@storybook/react-webpack5": "^7.0.0-beta.32",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "@timhettler/radix-card": "*",
+    "eslint-plugin-storybook": "^0.6.10",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.0-beta.32"
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "lint": "eslint",
+    "typecheck": "tsc",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@storybook/preset-scss": "^1.0.3",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/sass": "^1.43.1",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "classnames": "^2.3.2",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.3",
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.9.4"
+  }
+}
