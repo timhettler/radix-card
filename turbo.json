@@ -3,11 +3,14 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**", "storybook-static/**"]
     },
-    "lint": {},
+    "lint": {
+      "outputs": []
+    },
     "typecheck": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": []
     }
   }
 }
