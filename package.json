@@ -17,12 +17,13 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint",
+    "typecheck": "tsc",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "make-storybook": "storybook build",
+    "build-storybook": "storybook build",
     "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\""
   },
   "dependencies": {
@@ -31,7 +32,8 @@
     "@radix-ui/react-context": "^1.0.0",
     "@radix-ui/react-primitive": "^1.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "turbo": "latest"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-beta.31",
