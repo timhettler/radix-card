@@ -9,8 +9,6 @@ Makes an entire area clickable without common accessibility issues.
 
 ## Installation
 
-> Note: This library is not released yet.
-
 ```shell
 yarn add @timhettler/radix-card
 ```
