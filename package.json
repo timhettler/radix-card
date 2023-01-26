@@ -15,6 +15,6 @@
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "build": "turbo build",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
+    "publish-packages": "turbo run build lint typecheck && changeset version && changeset publish"
   }
 }
