@@ -18,7 +18,7 @@ yarn add @timhettler/radix-card
 Import the components and piece the parts together.
 
 ```jsx
-import * as Card from @timhettler/radix-card;
+import * as Card from "@timhettler/radix-card";
 
 export default () => (
   <Card.Root>
