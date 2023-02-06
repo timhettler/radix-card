@@ -1,20 +1,26 @@
 {
   "name": "@timhettler/radix-card",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/radix-card.umd.cjs",
   "module": "./dist/radix-card.js",
   "exports": {
-    ".": {
-      "import": "./dist/radix-card.js",
-      "require": "./dist/radix-card.umd.cjs"
-    }
+    ".": "./dist/radix-card.js"
   },
   "types": "./dist/radix-card.d.ts",
-  "license": "UNLICENSED",
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "react",
+    "accessibility",
+    "radix"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timhettler/radix-card"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

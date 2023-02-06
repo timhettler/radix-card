@@ -11,6 +11,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/main.ts"),
       name: "RadixCard",
       fileName: "radix-card",
+      formats: ["es"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
