@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "packageManager": "yarn@3.3.1",
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "dev": "yarn storybook",
     "build": "storybook build",
     "lint": "eslint",
     "typecheck": "tsc",

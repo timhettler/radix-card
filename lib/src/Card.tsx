@@ -7,6 +7,8 @@ import { Primitive } from "@radix-ui/react-primitive";
 import type * as Radix from "@radix-ui/react-primitive";
 import type { Scope } from "@radix-ui/react-context";
 
+import { useRedundantClick } from "./useRedundantClick";
+
 /* -------------------------------------------------------------------------------------------------
  * Card
  * -----------------------------------------------------------------------------------------------*/
@@ -31,41 +33,13 @@ interface CardProps extends PrimitiveDivProps {}
 const Card = React.forwardRef<CardElement, CardProps>(
   (props: ScopedProps<CardProps>, forwardedRef) => {
     const { __scopeCard, ...cardProps } = props;
-    const targetRef = React.useRef<HTMLElement>(null);
+    const { targetRef, handleRedundantClick } = useRedundantClick();
     const [targetHasFocus, setTargetHasFocus] = React.useState<"" | null>(null);
 
-    const handleClick = composeEventHandlers(props.onClick, (event) => {
-      if (!targetRef?.current) {
-        return;
-      }
-
-      // Do not execute click if user selected text within Card
-      if (window.getSelection()?.type === "Range") {
-        let t = window.getSelection()?.focusNode;
-        while (t !== document.body) {
-          if (t === event.currentTarget) {
-            return;
-          }
-          if (!t) {
-            return;
-          }
-          t = t.parentNode;
-        }
-        return;
-      }
-
-      // Do not execute click if it was done within an exclude area, or if the target was clicked (would result in two events firing)
-      let t = event.target as HTMLElement;
-      while (t !== event.currentTarget) {
-        if (t.dataset.exclude !== undefined || t === targetRef.current) {
-          return;
-        }
-        t = t.parentNode as HTMLElement;
-      }
-
-      const newEvent = new MouseEvent("click", { ...event, view: null }); // This change to the view prop was necessary to make TS happy
-      targetRef.current.dispatchEvent(newEvent);
-    });
+    const handleClick = composeEventHandlers(
+      props.onClick,
+      handleRedundantClick
+    );
 
     const handleFocus = composeEventHandlers(props.onFocus, (event) => {
       console.log(document.activeElement);

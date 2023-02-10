@@ -1,13 +1,14 @@
 {
   "name": "@timhettler/radix-card",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "files": [
     "dist"
   ],
   "module": "./dist/radix-card.js",
   "exports": {
-    ".": "./dist/radix-card.js"
+    ".": "./dist/radix-card.js",
+    "./hook": "./dist/radix-card2.js"
   },
   "types": "./dist/radix-card.d.ts",
   "license": "MIT",

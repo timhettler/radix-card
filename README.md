@@ -5,7 +5,9 @@ Makes an entire area clickable without common accessibility issues.
 ## Features
 
 - Full keyboard navigation
-- Exclude portions of Card for nested interactivity
+- Supports modified clicks (e.g. shift+click)
+- Allows text selection & image dragging within Card
+- Can exclude portions of Card for nested interactivity
 
 ## Installation
 

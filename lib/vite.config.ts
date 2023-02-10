@@ -9,12 +9,17 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/main.ts"),
-      name: "RadixCard",
-      fileName: "radix-card",
       formats: ["es"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
+      input: [
+        resolve(__dirname, "src/main.ts"),
+        resolve(__dirname, "src/useRedundantClick.ts"),
+      ],
+      output: {
+        preserveModules: false,
+      },
     },
   },
 });
