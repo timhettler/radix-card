@@ -42,7 +42,6 @@ const Card = React.forwardRef<CardElement, CardProps>(
     );
 
     const handleFocus = composeEventHandlers(props.onFocus, (event) => {
-      console.log(document.activeElement);
       setTargetHasFocus(event.target === targetRef.current ? "" : null);
     });
 
