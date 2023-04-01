@@ -22,7 +22,7 @@
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.0-beta.32",
     "@storybook/react-webpack5": "^7.0.0-beta.32",
-    "@storybook/testing-library": "^0.0.14-next.1",
+    "@storybook/testing-library": "^0.0.14--canary.136d346.0",
     "@timhettler/radix-card": "workspace:*",
     "@types/react": "latest",
     "@types/react-dom": "latest",
