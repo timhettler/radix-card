@@ -18,7 +18,7 @@
     "@storybook/addon-essentials": "^7.0.0-beta.32",
     "@storybook/addon-interactions": "^7.0.0-beta.32",
     "@storybook/addon-links": "^7.0.0-beta.32",
-    "@storybook/blocks": "^7.0.0-beta.32",
+    "@storybook/blocks": "^7.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.0-beta.32",
     "@storybook/react-webpack5": "^7.0.0-beta.32",
