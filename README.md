@@ -27,8 +27,8 @@ export default () => (
     <Card.Trigger></Card.Trigger>
     <Card.TriggerDescription></Card.TriggerDescription>
     <Card.Exclude></Card.Exclude>
-  </Card>
-)
+  </Card.Root>
+);
 ```
 
 ## API Reference
