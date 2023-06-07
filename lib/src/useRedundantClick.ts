@@ -1,14 +1,16 @@
 import React from "react";
 
-const useRedundantClick = () => {
-  const targetRef = React.useRef<HTMLElement>(null);
+const useRedundantClick = <T extends HTMLElement = HTMLElement>() => {
+  // Add to the clickable element
+  const targetRef = React.useRef<T>(null);
 
+  // Add to the container element
   const handleRedundantClick = (event: React.MouseEvent) => {
     if (!targetRef?.current) {
       return;
     }
 
-    // Do not execute click if user selected text within Card
+    // Do not execute click if user selected text within container
     if (window.getSelection()?.type === "Range") {
       let t = window.getSelection()?.focusNode;
       while (t !== document.body) {
