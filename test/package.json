@@ -2,6 +2,7 @@
   "name": "@timhettler/radix-card-test",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "packageManager": "yarn@3.3.1",
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -15,15 +16,15 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@storybook/addon-essentials": "^7.0.0-beta.32",
-    "@storybook/addon-interactions": "^7.0.0-beta.32",
-    "@storybook/addon-links": "^7.0.0-beta.32",
-    "@storybook/blocks": "^7.0.0-beta.32",
+    "@storybook/addon-essentials": "^7.0.18",
+    "@storybook/addon-interactions": "^7.0.18",
+    "@storybook/addon-links": "^7.0.18",
+    "@storybook/blocks": "^7.0.18",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^7.0.0-beta.32",
-    "@storybook/react-webpack5": "^7.0.0-beta.32",
-    "@storybook/testing-library": "^0.0.14-next.1",
-    "@timhettler/radix-card": "workspace:*",
+    "@storybook/react": "^7.0.18",
+    "@storybook/react-webpack5": "^7.0.18",
+    "@storybook/testing-library": "^0.1.0",
+    "@timhettler/radix-card": "workspace:^",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/sass": "^1.43.1",
@@ -36,14 +37,14 @@
     "react-dom": "^18.2.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
-    "storybook": "^7.0.0-beta.32",
+    "storybook": "^7.0.18",
     "style-loader": "^3.3.1",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-storybook": "^0.6.10",
+    "eslint-plugin-storybook": "^0.6.12",
     "prettier": "^2.8.3"
   }
 }
