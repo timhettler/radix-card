@@ -13,10 +13,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ["react", "react-dom"],
-      input: [
-        resolve(__dirname, "src/main.ts"),
-        resolve(__dirname, "src/useRedundantClick.ts"),
-      ],
+      input: [resolve(__dirname, "src/main.ts")],
       output: {
         preserveModules: false,
       },

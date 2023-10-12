@@ -1,3 +1,5 @@
+export { useRedundantClick } from "./useRedundantClick";
+
 export {
   createCardScope,
   //

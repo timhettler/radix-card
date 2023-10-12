@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 
-import { useRedundantClick } from "@timhettler/radix-card/hook";
+import { useRedundantClick } from "@timhettler/radix-card";
 
 const meta = {
   title: "Hook",
@@ -9,7 +9,8 @@ const meta = {
 export default meta;
 
 export const Basic = () => {
-  const { targetRef, handleRedundantClick } = useRedundantClick();
+  const { targetRef, handleRedundantClick } =
+    useRedundantClick<HTMLAnchorElement>();
 
   return (
     <div onClick={handleRedundantClick}>
