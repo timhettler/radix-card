@@ -24,8 +24,8 @@ import * as Card from "@timhettler/radix-card";
 
 export default () => (
   <Card.Root>
-    <Card.Trigger></Card.Trigger>
-    <Card.TriggerDescription></Card.TriggerDescription>
+    <Card.Target></Card.Target>
+    <Card.TargetDescription></Card.TargetDescription>
     <Card.Exclude></Card.Exclude>
   </Card.Root>
 );
