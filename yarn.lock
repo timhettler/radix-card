@@ -4725,7 +4725,7 @@ __metadata:
     "@storybook/testing-library": ^0.2.2
     "@timhettler/radix-card": "workspace:^"
     "@types/react": ^18.2.28
-    "@types/react-dom": ^18.2.13
+    "@types/react-dom": ^18.2.14
     "@types/sass": ^1.45.0
     "@typescript-eslint/eslint-plugin": ^6.7.5
     "@typescript-eslint/parser": ^6.7.5
@@ -4755,7 +4755,7 @@ __metadata:
     "@radix-ui/react-context": ^1.0.1
     "@radix-ui/react-primitive": ^1.0.3
     "@types/react": ^18.2.28
-    "@types/react-dom": ^18.2.13
+    "@types/react-dom": ^18.2.14
     "@typescript-eslint/eslint-plugin": ^6.7.5
     "@typescript-eslint/parser": ^6.7.5
     "@vitejs/plugin-react": ^4.1.0
@@ -5148,12 +5148,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.13":
-  version: 18.2.13
-  resolution: "@types/react-dom@npm:18.2.13"
+"@types/react-dom@npm:^18.2.14":
+  version: 18.2.14
+  resolution: "@types/react-dom@npm:18.2.14"
   dependencies:
     "@types/react": "*"
-  checksum: 22ba066b141dca5a5a9227fae0afc7c94b470fff8e8a38ade72649da57a8ea04d0cb2ba3e22005e7d8e772d49bddd28855b1dd98e6defd033bba6afb6edff883
+  checksum: 890289c70d1966c168037637c09cacefe6205bdd27a33252144a6b432595a2943775ac1a1accac0beddaeb67f8fdf721e076acb1adc990b08e51c3d9fd4e780c
   languageName: node
   linkType: hard
 
