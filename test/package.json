@@ -18,7 +18,7 @@
     "@babel/preset-typescript": "^7.23.2",
     "@storybook/addon-essentials": "^7.4.6",
     "@storybook/addon-interactions": "^7.4.6",
-    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-links": "^7.5.2",
     "@storybook/blocks": "^7.4.6",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.4.6",
