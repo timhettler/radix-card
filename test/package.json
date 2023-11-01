@@ -19,7 +19,7 @@
     "@storybook/addon-essentials": "^7.4.6",
     "@storybook/addon-interactions": "^7.4.6",
     "@storybook/addon-links": "^7.4.6",
-    "@storybook/blocks": "^7.4.6",
+    "@storybook/blocks": "^7.5.2",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.4.6",
     "@storybook/react-webpack5": "^7.4.6",
