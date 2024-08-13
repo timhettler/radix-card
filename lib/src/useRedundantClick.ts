@@ -38,9 +38,19 @@ const useRedundantClick = <T extends HTMLElement = HTMLElement>() => {
     targetRef.current.dispatchEvent(newEvent);
   };
 
+  // Add to the container element
+  const handleAuxiliaryClick = (event: React.MouseEvent) => {
+    if (event.button !== 1) {
+      return;
+    }
+
+    handleRedundantClick(event);
+  };
+
   return {
     targetRef,
     handleRedundantClick,
+    handleAuxiliaryClick,
   };
 };
 
