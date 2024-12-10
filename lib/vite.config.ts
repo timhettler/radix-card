@@ -1,4 +1,4 @@
-import { resolve } from "node:path";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
