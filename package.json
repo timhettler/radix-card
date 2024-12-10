@@ -13,5 +13,6 @@
     "typecheck": "turbo typecheck",
     "build": "turbo build",
     "publish-packages": "turbo run build lint test && changeset version && changeset publish"
-  }
+  },
+  "name": "radix-card"
 }
