@@ -39,7 +39,7 @@
     "sass-loader": "^13.3.2",
     "storybook": "^7.4.6",
     "style-loader": "^3.3.3",
-    "typescript": "^5.2.2"
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "eslint": "^8.51.0",
