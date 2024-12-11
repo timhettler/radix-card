@@ -1,22 +1,27 @@
-import { resolve } from "path";
+import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import dts from "vite-plugin-dts";
+import typescript from "@rollup/plugin-typescript";
+
+const resolvePath = (str: string) => path.resolve(__dirname, str);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ copyDtsFiles: false, rollupTypes: true })],
+  plugins: [
+    react(),
+    typescript({
+      tsconfig: resolvePath("tsconfig.app.json"),
+      declaration: true,
+      declarationDir: resolvePath("dist"),
+    }),
+  ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/main.ts"),
+      entry: resolvePath("src/main.ts"),
       formats: ["es"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
-      input: [resolve(__dirname, "src/main.ts")],
-      output: {
-        preserveModules: false,
-      },
     },
   },
 });

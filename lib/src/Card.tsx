@@ -4,7 +4,6 @@ import { useComposedRefs } from "@radix-ui/react-compose-refs";
 import { createContextScope } from "@radix-ui/react-context";
 import { Primitive } from "@radix-ui/react-primitive";
 
-import type * as Radix from "@radix-ui/react-primitive";
 import type { Scope } from "@radix-ui/react-context";
 
 import { useRedundantClick } from "./useRedundantClick";
@@ -27,7 +26,7 @@ const [CardProvider, useCardContext] =
   createCardContext<CardContextValue>(CARD_NAME);
 
 type CardElement = React.ElementRef<typeof Primitive.div>;
-type PrimitiveDivProps = Radix.ComponentPropsWithoutRef<typeof Primitive.div>;
+type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
 interface CardProps extends PrimitiveDivProps {}
 
 const Card = React.forwardRef<CardElement, CardProps>(
@@ -77,7 +76,7 @@ Card.displayName = CARD_NAME;
 const TARGET_NAME = "CardTarget";
 
 type CardTargetElement = React.ElementRef<typeof Primitive.a>;
-type PrimitiveAnchorProps = Radix.ComponentPropsWithoutRef<typeof Primitive.a>;
+type PrimitiveAnchorProps = React.ComponentPropsWithoutRef<typeof Primitive.a>;
 interface CardTargetProps extends PrimitiveAnchorProps {}
 
 const CardTarget = React.forwardRef<CardTargetElement, CardTargetProps>(
