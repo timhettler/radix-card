@@ -32,12 +32,18 @@ interface CardProps extends PrimitiveDivProps {}
 const Card = React.forwardRef<CardElement, CardProps>(
   (props: ScopedProps<CardProps>, forwardedRef) => {
     const { __scopeCard, ...cardProps } = props;
-    const { targetRef, handleRedundantClick } = useRedundantClick();
+    const { targetRef, handleRedundantClick, handleAuxiliaryClick } =
+      useRedundantClick();
     const [targetHasFocus, setTargetHasFocus] = React.useState<"" | null>(null);
 
     const handleClick = composeEventHandlers(
       props.onClick,
       handleRedundantClick
+    );
+
+    const handleAuxClick = composeEventHandlers(
+      props.onAuxClick,
+      handleAuxiliaryClick
     );
 
     const handleFocus = composeEventHandlers(props.onFocus, (event) => {
@@ -58,6 +64,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
           {...cardProps}
           ref={forwardedRef}
           onClick={handleClick}
+          onAuxClick={handleAuxClick}
           onFocus={handleFocus}
           onBlur={handleBlur}
           data-target-focused={targetHasFocus}
