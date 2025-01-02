@@ -7,9 +7,11 @@
   ],
   "module": "./dist/radix-card.js",
   "exports": {
-    ".": "./dist/radix-card.js"
+    ".": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/radix-card.js"
+    }
   },
-  "types": "./dist/radix-card.d.ts",
   "license": "MIT",
   "keywords": [
     "ui",
