@@ -25,9 +25,9 @@ type CardContextValue = {
 const [CardProvider, useCardContext] =
   createCardContext<CardContextValue>(CARD_NAME);
 
-type CardElement = React.ElementRef<typeof Primitive.div>;
-type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
-interface CardProps extends PrimitiveDivProps {}
+type CardElement = React.ElementRef<typeof Primitive.section>;
+type PrimitiveSectionProps = React.ComponentPropsWithoutRef<typeof Primitive.section>;
+interface CardProps extends PrimitiveSectionProps {}
 
 const Card = React.forwardRef<CardElement, CardProps>(
   (props: ScopedProps<CardProps>, forwardedRef) => {
@@ -60,7 +60,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
         targetRef={targetRef}
         descriptionId={undefined}
       >
-        <Primitive.div
+        <Primitive.section
           {...cardProps}
           ref={forwardedRef}
           onClick={handleClick}
