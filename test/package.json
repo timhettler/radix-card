@@ -19,7 +19,7 @@
   "devDependencies": {
     "@eslint/js": "^9.16.0",
     "@storybook/addon-essentials": "^8.4.7",
-    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-interactions": "^8.5.3",
     "@storybook/blocks": "^8.4.7",
     "@storybook/react": "^8.4.7",
     "@storybook/react-vite": "^8.4.7",
