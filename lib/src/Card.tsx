@@ -25,7 +25,7 @@ type CardContextValue = {
 const [CardProvider, useCardContext] =
   createCardContext<CardContextValue>(CARD_NAME);
 
-type CardElement = React.ElementRef<typeof Primitive.div>;
+type CardElement = React.ComponentRef<typeof Primitive.div>;
 type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
 interface CardProps extends PrimitiveDivProps {}
 
@@ -82,7 +82,7 @@ Card.displayName = CARD_NAME;
 
 const TARGET_NAME = "CardTarget";
 
-type CardTargetElement = React.ElementRef<typeof Primitive.a>;
+type CardTargetElement = React.ComponentRef<typeof Primitive.a>;
 type PrimitiveAnchorProps = React.ComponentPropsWithoutRef<typeof Primitive.a>;
 interface CardTargetProps extends PrimitiveAnchorProps {}
 
@@ -110,7 +110,7 @@ CardTarget.displayName = TARGET_NAME;
 
 const TARGET_DESCRIPTION_NAME = "CardTargetDescription";
 
-type CardTargetDescriptionElement = React.ElementRef<typeof Primitive.span>;
+type CardTargetDescriptionElement = React.ComponentRef<typeof Primitive.span>;
 interface CardTargetDescriptionProps extends PrimitiveDivProps {}
 
 const CardTargetDescription = React.forwardRef<
@@ -140,7 +140,7 @@ CardTargetDescription.displayName = TARGET_DESCRIPTION_NAME;
 
 const EXCLUDE_NAME = "CardExclude";
 
-type CardExcludeElement = React.ElementRef<typeof Primitive.div>;
+type CardExcludeElement = React.ComponentRef<typeof Primitive.div>;
 interface CardExcludeProps extends PrimitiveDivProps {}
 
 const CardExclude = React.forwardRef<CardExcludeElement, CardExcludeProps>(
