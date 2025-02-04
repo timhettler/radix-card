@@ -1219,10 +1219,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/primitive@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@radix-ui/primitive@npm:1.1.0"
-  checksum: 10/7cbf70bfd4b2200972dbd52a9366801b5a43dd844743dc97eb673b3ec8e64f5dd547538faaf9939abbfe8bb275773767ecf5a87295d90ba09c15cba2b5528c89
+"@radix-ui/primitive@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@radix-ui/primitive@npm:1.1.1"
+  checksum: 10/d7e819177590108b74139809d52ec043c0962ae3513e947998be575fb13639c5c1c091896ddcf1d6a22a777d44ade59d22c2019ce9099607fc62a5de09c59707
   languageName: node
   linkType: hard
 
@@ -1955,7 +1955,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@timhettler/radix-card@workspace:lib"
   dependencies:
-    "@radix-ui/primitive": "npm:^1.1.0"
+    "@radix-ui/primitive": "npm:^1.1.1"
     "@radix-ui/react-compose-refs": "npm:^1.1.0"
     "@radix-ui/react-context": "npm:^1.1.1"
     "@radix-ui/react-primitive": "npm:^2.0.1"
