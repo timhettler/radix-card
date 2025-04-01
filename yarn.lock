@@ -1640,22 +1640,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:^8.6.3":
-  version: 8.6.3
-  resolution: "@storybook/blocks@npm:8.6.3"
+"@storybook/blocks@npm:^8.6.11":
+  version: 8.6.11
+  resolution: "@storybook/blocks@npm:8.6.11"
   dependencies:
     "@storybook/icons": "npm:^1.2.12"
     ts-dedent: "npm:^2.0.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    storybook: ^8.6.3
+    storybook: ^8.6.11
   peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 10/52bf94475ec129cba4aa8be258ef8bf9106b5af5fa19b0d113c722925daab227acd7c519d3672c3083034297ee5c4a09ae7593059442e450b2fe8b1592cde432
+  checksum: 10/3ae862a7706ae2abc0049d8f1fabf38a714acd20a36bf3414b1c7528e489bacdb773ca3a18c874f40ba10a4e3a60bc27cbe92c43335e8a2cf8d5f36f62bf4aef
   languageName: node
   linkType: hard
 
@@ -1954,7 +1954,7 @@ __metadata:
     "@eslint/js": "npm:^9.19.0"
     "@storybook/addon-essentials": "npm:^8.5.3"
     "@storybook/addon-interactions": "npm:^8.5.3"
-    "@storybook/blocks": "npm:^8.6.3"
+    "@storybook/blocks": "npm:^8.6.11"
     "@storybook/react": "npm:^8.5.3"
     "@storybook/react-vite": "npm:^8.5.3"
     "@storybook/test": "npm:^8.6.4"
