@@ -18,7 +18,7 @@
     "sass-embedded": "^1.83.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
+    "@eslint/js": "^9.34.0",
     "@storybook/addon-essentials": "^8.5.3",
     "@storybook/addon-interactions": "^8.5.3",
     "@storybook/blocks": "^8.6.3",
