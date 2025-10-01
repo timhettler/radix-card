@@ -739,10 +739,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.19.0, @eslint/js@npm:^9.19.0":
+"@eslint/js@npm:9.19.0":
   version: 9.19.0
   resolution: "@eslint/js@npm:9.19.0"
   checksum: 10/d8133a83330676d5f0827713af2e9bbf35530631a93520fb59ead6b827a325c54fdd7ad99f2158f895fb393c47bbc55dfdaa945998a647f3b9230f1d5324a626
+  languageName: node
+  linkType: hard
+
+"@eslint/js@npm:^9.36.0":
+  version: 9.36.0
+  resolution: "@eslint/js@npm:9.36.0"
+  checksum: 10/a0542f529f87b9ad69ef85c47b0c070b763591a61773b131a9d1d53934a587f0708c05a1a8f48a6805486004a4922c91d696c1e4835ff61f8750ffbded2f0c30
   languageName: node
   linkType: hard
 
@@ -1951,7 +1958,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@timhettler/radix-card-test@workspace:test"
   dependencies:
-    "@eslint/js": "npm:^9.19.0"
+    "@eslint/js": "npm:^9.36.0"
     "@storybook/addon-essentials": "npm:^8.5.3"
     "@storybook/addon-interactions": "npm:^8.5.3"
     "@storybook/blocks": "npm:^8.6.3"
