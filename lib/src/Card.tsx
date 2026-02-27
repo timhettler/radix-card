@@ -35,15 +35,16 @@ const Card = React.forwardRef<CardElement, CardProps>(
     const { targetRef, handleRedundantClick, handleAuxiliaryClick } =
       useRedundantClick();
     const [targetHasFocus, setTargetHasFocus] = React.useState<"" | null>(null);
+    const generatedDescriptionId = React.useId();
 
     const handleClick = composeEventHandlers(
       props.onClick,
-      handleRedundantClick
+      handleRedundantClick,
     );
 
     const handleAuxClick = composeEventHandlers(
       props.onAuxClick,
-      handleAuxiliaryClick
+      handleAuxiliaryClick,
     );
 
     const handleFocus = composeEventHandlers(props.onFocus, (event) => {
@@ -58,7 +59,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
       <CardProvider
         scope={__scopeCard}
         targetRef={targetRef}
-        descriptionId={undefined}
+        descriptionId={generatedDescriptionId}
       >
         <Primitive.div
           {...cardProps}
@@ -71,7 +72,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
         />
       </CardProvider>
     );
-  }
+  },
 );
 
 Card.displayName = CARD_NAME;
@@ -99,7 +100,7 @@ const CardTarget = React.forwardRef<CardTargetElement, CardTargetProps>(
         ref={composedRefs}
       />
     );
-  }
+  },
 );
 
 CardTarget.displayName = TARGET_NAME;
@@ -117,15 +118,13 @@ const CardTargetDescription = React.forwardRef<
   CardTargetDescriptionElement,
   CardTargetDescriptionProps
 >((props: ScopedProps<CardTargetDescriptionProps>, forwardedRef) => {
-  const generatedId = React.useId();
   const { __scopeCard, ...targetProps } = props;
   const context = useCardContext(TARGET_DESCRIPTION_NAME, __scopeCard);
-  context.descriptionId = props.id || generatedId;
 
   return (
     <Primitive.span
       {...targetProps}
-      id={context.descriptionId}
+      id={props.id ?? context.descriptionId}
       aria-hidden="true"
       ref={forwardedRef}
     />
@@ -151,7 +150,7 @@ const CardExclude = React.forwardRef<CardExcludeElement, CardExcludeProps>(
     return (
       <Primitive.div data-exclude="" {...targetProps} ref={forwardedRef} />
     );
-  }
+  },
 );
 
 CardExclude.displayName = EXCLUDE_NAME;
