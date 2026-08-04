@@ -40,20 +40,20 @@
     "@radix-ui/react-primitive": "^2.1.10"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@rollup/plugin-typescript": "^12.3.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "@typescript-eslint/eslint-plugin": "^8.66.0",
-    "@typescript-eslint/parser": "^8.66.0",
-    "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^8.57.1",
+    "@vitejs/plugin-react": "^6.0.5",
+    "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "json": "^11.0.0",
     "prettier": "^3.9.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "typescript": "^5.9.3",
-    "vite": "^6.4.3"
+    "typescript-eslint": "^8.66.0",
+    "vite": "^8.2.0"
   },
   "peerDependencies": {
     "react": "*",
