@@ -130,7 +130,7 @@ describe("Card redundant click", () => {
     expect(onClick).not.toHaveBeenCalled();
   });
 
-  it("preserves modifier keys on the synthetic click", () => {
+  it("preserves modifier keys and pointer coordinates on the synthetic click", () => {
     renderCard();
     const target = screen.getByRole("link", { name: "Graphic Design" });
     let dispatched: MouseEvent | undefined;
@@ -142,10 +142,14 @@ describe("Card redundant click", () => {
     fireEvent.click(screen.getByText("Body text"), {
       metaKey: true,
       shiftKey: true,
+      clientX: 42,
+      clientY: 24,
     });
 
     expect(dispatched?.metaKey).toBe(true);
     expect(dispatched?.shiftKey).toBe(true);
+    expect(dispatched?.clientX).toBe(42);
+    expect(dispatched?.clientY).toBe(24);
   });
 });
 
