@@ -51,3 +51,6 @@ jobs:
 
       - name: Build
         run: yarn build
+
+      - name: Check package
+        run: yarn workspace @timhettler/radix-card check:package
