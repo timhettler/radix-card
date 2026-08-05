@@ -16,6 +16,7 @@
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "build": "turbo build",
+    "release": "turbo run build --filter=@timhettler/radix-card && changeset publish",
     "publish-packages": "turbo run build lint && changeset version && changeset publish"
   },
   "name": "radix-card"
