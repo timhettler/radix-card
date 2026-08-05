@@ -20,6 +20,7 @@ const [createCardContext, createCardScope] = createContextScope(CARD_NAME);
 type CardContextValue = {
   targetRef: React.RefObject<HTMLElement | null>;
   descriptionId?: string;
+  onDescriptionIdChange(id: string | undefined): void;
 };
 
 const [CardProvider, useCardContext] =
@@ -35,15 +36,16 @@ const Card = React.forwardRef<CardElement, CardProps>(
     const { targetRef, handleRedundantClick, handleAuxiliaryClick } =
       useRedundantClick();
     const [targetHasFocus, setTargetHasFocus] = React.useState<"" | null>(null);
+    const [descriptionId, setDescriptionId] = React.useState<string>();
 
     const handleClick = composeEventHandlers(
       props.onClick,
-      handleRedundantClick
+      handleRedundantClick,
     );
 
     const handleAuxClick = composeEventHandlers(
       props.onAuxClick,
-      handleAuxiliaryClick
+      handleAuxiliaryClick,
     );
 
     const handleFocus = composeEventHandlers(props.onFocus, (event) => {
@@ -58,7 +60,8 @@ const Card = React.forwardRef<CardElement, CardProps>(
       <CardProvider
         scope={__scopeCard}
         targetRef={targetRef}
-        descriptionId={undefined}
+        descriptionId={descriptionId}
+        onDescriptionIdChange={setDescriptionId}
       >
         <Primitive.div
           {...cardProps}
@@ -71,7 +74,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
         />
       </CardProvider>
     );
-  }
+  },
 );
 
 Card.displayName = CARD_NAME;
@@ -99,7 +102,7 @@ const CardTarget = React.forwardRef<CardTargetElement, CardTargetProps>(
         ref={composedRefs}
       />
     );
-  }
+  },
 );
 
 CardTarget.displayName = TARGET_NAME;
@@ -120,12 +123,18 @@ const CardTargetDescription = React.forwardRef<
   const generatedId = React.useId();
   const { __scopeCard, ...targetProps } = props;
   const context = useCardContext(TARGET_DESCRIPTION_NAME, __scopeCard);
-  context.descriptionId = props.id || generatedId;
+  const id = props.id ?? generatedId;
+
+  const { onDescriptionIdChange } = context;
+  React.useEffect(() => {
+    onDescriptionIdChange(id);
+    return () => onDescriptionIdChange(undefined);
+  }, [id, onDescriptionIdChange]);
 
   return (
     <Primitive.span
       {...targetProps}
-      id={context.descriptionId}
+      id={id}
       aria-hidden="true"
       ref={forwardedRef}
     />
@@ -151,7 +160,7 @@ const CardExclude = React.forwardRef<CardExcludeElement, CardExcludeProps>(
     return (
       <Primitive.div data-exclude="" {...targetProps} ref={forwardedRef} />
     );
-  }
+  },
 );
 
 CardExclude.displayName = EXCLUDE_NAME;
