@@ -3,24 +3,24 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@timhettler/radix-card": "workspace:^",
-    "next": "15.5.22",
+    "next": "16.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.6",
     "@types/node": "^22.20.1",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "eslint": "^9.39.5",
-    "eslint-config-next": "15.5.22",
+    "eslint-config-next": "16.3.0",
     "typescript": "^5.9.3"
   }
 }
