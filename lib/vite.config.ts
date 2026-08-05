@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import typescript from "@rollup/plugin-typescript";
 
-const resolvePath = (str: string) => path.resolve(__dirname, str);
+const resolvePath = (str: string) => path.resolve(import.meta.dirname, str);
 
 // https://vitejs.dev/config/
 export default defineConfig({
