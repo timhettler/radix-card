@@ -20,6 +20,7 @@ const [createCardContext, createCardScope] = createContextScope(CARD_NAME);
 type CardContextValue = {
   targetRef: React.RefObject<HTMLElement | null>;
   descriptionId?: string;
+  onDescriptionIdChange(id: string | undefined): void;
 };
 
 const [CardProvider, useCardContext] =
@@ -35,7 +36,7 @@ const Card = React.forwardRef<CardElement, CardProps>(
     const { targetRef, handleRedundantClick, handleAuxiliaryClick } =
       useRedundantClick();
     const [targetHasFocus, setTargetHasFocus] = React.useState<"" | null>(null);
-    const generatedDescriptionId = React.useId();
+    const [descriptionId, setDescriptionId] = React.useState<string>();
 
     const handleClick = composeEventHandlers(
       props.onClick,
@@ -59,7 +60,8 @@ const Card = React.forwardRef<CardElement, CardProps>(
       <CardProvider
         scope={__scopeCard}
         targetRef={targetRef}
-        descriptionId={generatedDescriptionId}
+        descriptionId={descriptionId}
+        onDescriptionIdChange={setDescriptionId}
       >
         <Primitive.div
           {...cardProps}
@@ -118,13 +120,21 @@ const CardTargetDescription = React.forwardRef<
   CardTargetDescriptionElement,
   CardTargetDescriptionProps
 >((props: ScopedProps<CardTargetDescriptionProps>, forwardedRef) => {
+  const generatedId = React.useId();
   const { __scopeCard, ...targetProps } = props;
   const context = useCardContext(TARGET_DESCRIPTION_NAME, __scopeCard);
+  const id = props.id ?? generatedId;
+
+  const { onDescriptionIdChange } = context;
+  React.useEffect(() => {
+    onDescriptionIdChange(id);
+    return () => onDescriptionIdChange(undefined);
+  }, [id, onDescriptionIdChange]);
 
   return (
     <Primitive.span
       {...targetProps}
-      id={props.id ?? context.descriptionId}
+      id={id}
       aria-hidden="true"
       ref={forwardedRef}
     />
