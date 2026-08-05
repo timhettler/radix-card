@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: Smoke Tests
+    name: Verify
     timeout-minutes: 15
     runs-on: ubuntu-latest
     # https://turbo.build/repo/docs/ci/github-actions
@@ -40,8 +40,14 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Check formatting
+        run: yarn format:check
+
       - name: Typecheck
         run: yarn typecheck
+
+      - name: Test
+        run: yarn test
 
       - name: Build
         run: yarn build

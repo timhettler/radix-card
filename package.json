@@ -1,8 +1,9 @@
 {
   "workspaces": [
-    "test",
+    "config",
+    "docs",
     "lib",
-    "app"
+    "example"
   ],
   "packageManager": "yarn@4.5.3",
   "engines": {
@@ -12,12 +13,18 @@
     "@changesets/cli": "^2.31.1",
     "turbo": "^2.10.8"
   },
+  "devDependencies": {
+    "@timhettler/config": "workspace:*",
+    "prettier": "^3.9.6"
+  },
   "scripts": {
     "lint": "turbo lint",
     "typecheck": "turbo typecheck",
     "build": "turbo build",
-    "release": "turbo run build --filter=@timhettler/radix-card && changeset publish",
-    "publish-packages": "turbo run build lint && changeset version && changeset publish"
+    "test": "turbo test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "release": "turbo run build --filter=@timhettler/radix-card && changeset publish"
   },
   "name": "radix-card"
 }

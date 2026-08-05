@@ -34,7 +34,20 @@ const useRedundantClick = <T extends HTMLElement = HTMLElement>() => {
       t = t.parentNode as HTMLElement;
     }
 
-    const newEvent = new MouseEvent("click", { ...event, view: window });
+    // Re-dispatch as a fresh click on the target, copying the properties that
+    // change how the click is handled (e.g. modifier keys / button open a new
+    // tab). We copy explicit fields rather than spreading the React synthetic
+    // event, which is not a valid MouseEventInit.
+    const newEvent = new MouseEvent("click", {
+      bubbles: true,
+      cancelable: true,
+      ctrlKey: event.ctrlKey,
+      altKey: event.altKey,
+      shiftKey: event.shiftKey,
+      metaKey: event.metaKey,
+      button: event.button,
+      buttons: event.buttons,
+    });
     targetRef.current.dispatchEvent(newEvent);
   };
 

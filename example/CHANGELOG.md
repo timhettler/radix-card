@@ -1,4 +1,4 @@
-# app
+# @timhettler/radix-card-example
 
 ## 0.1.1
 

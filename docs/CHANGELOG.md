@@ -1,4 +1,4 @@
-# @timhettler/radix-card-test
+# @timhettler/radix-card-docs
 
 ## 0.0.2
 

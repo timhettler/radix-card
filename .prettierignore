@@ -1,0 +1,9 @@
+node_modules
+**/dist
+**/.next
+**/storybook-static
+**/.turbo
+.yarn
+yarn.lock
+**/CHANGELOG.md
+**/next-env.d.ts

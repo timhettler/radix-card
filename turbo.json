@@ -5,9 +5,10 @@
       "outputs": []
     },
     "typecheck": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "test": {
       "outputs": []
     }
   }

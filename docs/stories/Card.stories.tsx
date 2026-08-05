@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { within, waitFor, expect } from "storybook/test";
 import classNames from "classnames/bind";
 
 import * as Card from "@timhettler/radix-card";
@@ -44,6 +45,12 @@ export const Basic: Story = {
       </>
     ),
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(
+      canvas.getByRole("link", { name: /learn more/i }),
+    ).toHaveAttribute("href");
+  },
 };
 
 export const BetterAccessibility: Story = {
@@ -66,6 +73,15 @@ export const BetterAccessibility: Story = {
         </div>
       </>
     ),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    // The description's id is wired to the target via aria-describedby.
+    await waitFor(() =>
+      expect(
+        canvas.getByRole("link", { name: /graphic design/i }),
+      ).toHaveAttribute("aria-describedby"),
+    );
   },
 };
 
@@ -102,5 +118,20 @@ export const NestedInteractions: Story = {
         </Card.Exclude>
       </>
     ),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await waitFor(() =>
+      expect(
+        canvas.getByRole("link", { name: /graphic design/i }),
+      ).toHaveAttribute("aria-describedby"),
+    );
+    // Links inside an excluded region stay independently reachable.
+    await expect(
+      canvas.getByRole("link", { name: /aesthetics/i }),
+    ).toBeInTheDocument();
+    await expect(
+      canvas.getByRole("link", { name: /color theory/i }),
+    ).toBeInTheDocument();
   },
 };

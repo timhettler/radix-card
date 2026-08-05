@@ -2,6 +2,7 @@
   "name": "@timhettler/radix-card",
   "version": "1.2.1",
   "type": "module",
+  "sideEffects": false,
   "publishConfig": {
     "access": "public"
   },
@@ -24,14 +25,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/timhettler/radix-card"
+    "url": "git+https://github.com/timhettler/radix-card.git"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint",
     "typecheck": "tsc",
-    "format": "prettier --write ."
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "check:package": "publint && attw --pack --profile esm-only"
   },
   "dependencies": {
     "@radix-ui/primitive": "^1.1.7",
@@ -40,23 +44,31 @@
     "@radix-ui/react-primitive": "^2.1.10"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@rollup/plugin-typescript": "^12.3.0",
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@microsoft/api-extractor": "^7.52.8",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@timhettler/config": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.0.5",
+    "axe-core": "^4.10.2",
     "eslint": "^10.8.0",
-    "eslint-config-prettier": "^10.1.8",
+    "jsdom": "^26.0.0",
     "json": "^11.0.0",
     "prettier": "^3.9.6",
+    "publint": "^0.3.5",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.66.0",
-    "vite": "^8.2.0"
+    "vite": "^8.2.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.0.0"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": ">=18",
+    "react-dom": ">=18"
   }
 }
