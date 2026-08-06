@@ -2,6 +2,6 @@
 "@timhettler/radix-card": patch
 ---
 
-Externalize the `@radix-ui/*` primitives from the published bundle (they remain runtime `dependencies`) to avoid duplicate React context instances when a consumer also uses Radix, and mark the package `sideEffects: false` for better tree-shaking.
+Bundle the low-level `@radix-ui/*` primitives (and their types) into the published package and move them to `devDependencies`, so the package is self-contained and no longer adds Radix to the consumer's dependency tree. Also mark the package `sideEffects: false` for better tree-shaking.
 
 Require React `>=18` via `peerDependencies`, since the component relies on `useId`.

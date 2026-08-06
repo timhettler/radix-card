@@ -35,15 +35,13 @@
     "format": "prettier --write .",
     "check:package": "publint && attw --pack --profile esm-only"
   },
-  "dependencies": {
-    "@radix-ui/primitive": "^1.1.7",
-    "@radix-ui/react-compose-refs": "^1.1.5",
-    "@radix-ui/react-context": "^1.2.2",
-    "@radix-ui/react-primitive": "^2.1.10"
-  },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
     "@microsoft/api-extractor": "^7.52.8",
+    "@radix-ui/primitive": "^1.1.7",
+    "@radix-ui/react-compose-refs": "^1.1.5",
+    "@radix-ui/react-context": "^1.2.2",
+    "@radix-ui/react-primitive": "^2.1.10",
     "@timhettler/config": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
