@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@timhettler/radix-card-example",
   "version": "0.1.1",
   "private": true,
   "scripts": {

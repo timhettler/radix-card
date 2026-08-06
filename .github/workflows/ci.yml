@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: Smoke Tests
+    name: Verify
     timeout-minutes: 15
     runs-on: ubuntu-latest
     # https://turbo.build/repo/docs/ci/github-actions
@@ -40,8 +40,35 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Check formatting
+        run: yarn format:check
+
       - name: Typecheck
         run: yarn typecheck
 
       - name: Build
         run: yarn build
+
+      - name: Resolve Playwright version
+        id: playwright
+        run: echo "version=$(yarn workspace @timhettler/radix-card-docs exec playwright --version | awk '{print $2}')" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ steps.playwright.outputs.version }}
+
+      - name: Install Playwright browser
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: yarn workspace @timhettler/radix-card-docs exec playwright install chromium
+
+      - name: Install Playwright system dependencies
+        run: yarn workspace @timhettler/radix-card-docs exec playwright install-deps chromium
+
+      - name: Test
+        run: yarn test
+
+      - name: Check package
+        run: yarn workspace @timhettler/radix-card check:package
