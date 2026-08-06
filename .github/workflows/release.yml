@@ -33,6 +33,9 @@ jobs:
         with:
           publish: yarn release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PAT (secret: RELEASE_TOKEN) with `workflows` permission so Changesets
+          # can update the Version PR branch even when it includes workflow-file
+          # changes — the default GITHUB_TOKEN cannot push to .github/workflows/**.
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
