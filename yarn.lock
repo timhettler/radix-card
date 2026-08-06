@@ -2578,7 +2578,7 @@ __metadata:
   resolution: "@timhettler/radix-card-example@workspace:example"
   dependencies:
     "@timhettler/radix-card": "workspace:^"
-    "@types/node": "npm:^22.20.1"
+    "@types/node": "npm:^26.1.2"
     "@types/react": "npm:^19.2.18"
     "@types/react-dom": "npm:^19.2.4"
     eslint: "npm:^9.39.5"
@@ -2807,12 +2807,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.20.1":
-  version: 22.20.1
-  resolution: "@types/node@npm:22.20.1"
+"@types/node@npm:^26.1.2":
+  version: 26.1.2
+  resolution: "@types/node@npm:26.1.2"
   dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10/0949e49d0383569ebd1222a2f65a9adb9328a6a6dbed459a02cdb37c61147755386c004c4ffbe436de59f5859df1774b1dd6bf168f7aeee46884bb190e0c384f
+    undici-types: "npm:~8.3.0"
+  checksum: 10/2dd6d75b80c006deab4e381acc8cb2e3d634f10141f05fd6cadaabddd80a95f04aef7b00a574bd8fd5e08e940b899c23b91dd09a70b11a34a2762203b5eea25e
   languageName: node
   linkType: hard
 
@@ -9471,10 +9471,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
+"undici-types@npm:~8.3.0":
+  version: 8.3.0
+  resolution: "undici-types@npm:8.3.0"
+  checksum: 10/6681d2837ac75a75ac1cc46090aa2b8ddc7c6b8ecc295a6cdb06838752a730da3d8afeecf05e5ab7903160eafad3a8b6ffa1927e5ded260590f4d4fef18646d5
   languageName: node
   linkType: hard
 
