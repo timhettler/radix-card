@@ -18,6 +18,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    target: "es2022",
     lib: {
       entry: resolvePath("src/main.ts"),
       formats: ["es"],
