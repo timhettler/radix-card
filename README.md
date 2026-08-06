@@ -213,6 +213,14 @@ export default () => (
 
 Allows a container to be interactive without affecting the usability of [Link](https://www.w3.org/WAI/ARIA/apg/patterns/link/) or [Button](https://www.w3.org/WAI/ARIA/apg/patterns/button/) WAI-ARIA design patterns within.
 
+## Trade-offs
+
+`Card` forwards clicks from the container to the `Target` link in JavaScript instead of stretching the link's hit area over the whole container (the common `::after { position: absolute; inset: 0 }` overlay trick). This is deliberate: keeping the link at its natural size is what lets you **select text and drag images** anywhere in the card, and keeps nested interactive content (`Exclude`, secondary links) simple.
+
+The trade-off is the browser's **native link preview** — the destination URL most browsers show in the status bar while hovering a link. That preview is browser chrome tied to the actual element under the pointer, so it only appears over the real `Target`, not across the whole card. It can't be reproduced synthetically (the legacy `window.status` hook is a no-op in modern browsers). Interactive affordances like `cursor: pointer` and `:hover` styling _are_ recoverable — apply them to `Root` (see [Providing an Adequate Visible Focus Indicator](#providing-an-adequate-visible-focus-indicator)) — but the URL preview itself is not.
+
+The overlay approach makes the opposite trade: you get the native URL preview and native navigation for free, but the overlay sits on top of the content, which breaks text selection and forces nested interactive elements to be lifted above it. This component intentionally prioritizes selectable content.
+
 ## References & Prior Art
 
 - [Web Axe: Resources for developing accessible cards/tiles](https://www.webaxe.org/resources-for-developing-accessible-cards-tiles/)
