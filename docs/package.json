@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^10.5.6",
-    "@storybook/addon-vitest": "^10.5.6",
+    "@storybook/addon-vitest": "^10.5.10",
     "@storybook/react": "^10.5.6",
     "@storybook/react-vite": "^10.5.6",
     "@timhettler/config": "workspace:*",
