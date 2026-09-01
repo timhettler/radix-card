@@ -2357,9 +2357,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-vitest@npm:^10.5.6":
-  version: 10.5.6
-  resolution: "@storybook/addon-vitest@npm:10.5.6"
+"@storybook/addon-vitest@npm:^10.5.10":
+  version: 10.5.10
+  resolution: "@storybook/addon-vitest@npm:10.5.10"
   dependencies:
     "@storybook/global": "npm:^5.0.0"
     "@storybook/icons": "npm:^2.0.2"
@@ -2367,7 +2367,7 @@ __metadata:
     "@vitest/browser": ^3.0.0 || ^4.0.0
     "@vitest/browser-playwright": ^4.0.0
     "@vitest/runner": ^3.0.0 || ^4.0.0
-    storybook: ^10.5.6
+    storybook: ^10.5.10
     vitest: ^3.0.0 || ^4.0.0
   peerDependenciesMeta:
     "@vitest/browser":
@@ -2378,7 +2378,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10/13b2e5bc7a5222ab7bb5c8ecd4b3decfdf5960a34947d55801eb677c9e506dd6dca63776dbfa5f6010f4ee1e0b7e236ef73c5de14ddb16159ad88a0a18dad32c
+  checksum: 10/cb464ab5bc64d2e260938ad7e1ba32050fe576f0bfddb487e0cf0e0a8aba33a0cfb22a78a6881998ef426e20c741ab5014e69bdb25b76b06f626c280a70fc9b5
   languageName: node
   linkType: hard
 
@@ -2573,7 +2573,7 @@ __metadata:
   resolution: "@timhettler/radix-card-docs@workspace:docs"
   dependencies:
     "@storybook/addon-a11y": "npm:^10.5.6"
-    "@storybook/addon-vitest": "npm:^10.5.6"
+    "@storybook/addon-vitest": "npm:^10.5.10"
     "@storybook/react": "npm:^10.5.6"
     "@storybook/react-vite": "npm:^10.5.6"
     "@timhettler/config": "workspace:*"
