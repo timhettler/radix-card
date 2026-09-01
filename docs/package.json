@@ -21,7 +21,7 @@
     "@storybook/addon-a11y": "^10.5.6",
     "@storybook/addon-vitest": "^10.5.6",
     "@storybook/react": "^10.5.6",
-    "@storybook/react-vite": "^10.5.6",
+    "@storybook/react-vite": "^10.5.10",
     "@timhettler/config": "workspace:*",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
